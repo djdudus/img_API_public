@@ -8,7 +8,7 @@ python manage.py collectstatic --noinput
 echo "Apply database migrations"
 python manage.py migrate
 
-#check for marker file
+#check for a marker file
 if [ ! -f "/tmp/init_data_done" ]; then
     echo "Initializing data"
     python manage.py init_data
