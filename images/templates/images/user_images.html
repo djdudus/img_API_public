@@ -1,0 +1,22 @@
+{% block content %}
+  <h2>Your Images</h2>
+  
+  <ul>
+    {% for img in images %}
+      <li>
+        <h3>{{ img.name }}</h3>  <!-- assuming 'name' is a field or method on your Image model -->
+        
+        <!-- 200px thumbnail -->
+        <img src="{{ img.thumbnails.get(size__height=200).thumbnail.url }}" alt="{{ img.name }}">
+        <a href="{{ img.thumbnails.get(size__height=200).thumbnail.url }}">200px Thumbnail</a>
+
+        <!-- 400px thumbnail -->
+        <img src="{{ img.thumbnails.get(size__height=400).thumbnail.url }}" alt="{{ img.name }}">
+        <a href="{{ img.thumbnails.get(size__height=400).thumbnail.url }}">400px Thumbnail</a>
+
+        <!-- Original image link -->
+        <a href="{{ img.image.url }}">Original Image</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
