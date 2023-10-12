@@ -48,7 +48,7 @@ This Django project provides a RESTful API that allows users to upload, view, an
 - **Browsable API from Django Rest Framework:** Provides an interface to interact with the API endpoints.
 
 ## Features
-
+- **Login** `/login` To access all of the functions login to any user.
 - **Image Upload:** `/upload` Users can upload images in PNG or JPG format.
 - **Image Listing:** `/images` Users can list their uploaded images.
 - **Account Tiers:** Users belong to plans (Basic, Premium, and Enterprise) that determine their access levels.
