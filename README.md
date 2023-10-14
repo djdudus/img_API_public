@@ -33,6 +33,13 @@ This Django project provides a RESTful API that allows users to upload, view, an
    - Update `ALLOWED_HOSTS` in `settings.py`. This should be set to the domain name of your deployment.
    - Match database settings in `settings.py` to your production database.
 
+      #### Important Note for Deployment
+      When deploying or cloning the project on a new machine, especially UNIX-based systems, make sure that all necessary scripts have execute permissions. For instance, our entrypoint.sh script, which is crucial for Docker initialization, should have execute permissions:
+
+      ```bash
+      chmod +x entrypoint.sh
+      ```
+      Without the correct permissions, you might encounter errors like "permission denied" when trying to start services that rely on these scripts.
 4. **Build and Run with Docker Compose:**
    ```bash
    docker-compose build
