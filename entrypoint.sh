@@ -1,11 +1,13 @@
 #!/bin/sh
-
+#ensure that the app has permissions:
+chown -R app:app $APP_HOME
 # Collect static files
 echo "Collect static files"
 python manage.py collectstatic --noinput
 
 # Apply database migrations
 echo "Apply database migrations"
+python manage.py makemigrations
 python manage.py migrate
 
 #check for a marker file
