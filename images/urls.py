@@ -10,6 +10,7 @@ from .views import (
 urlpatterns = [
     path("upload/", ImageUploadView.as_view(), name="upload"),
     path("", UserImagesListView.as_view(), name="list_images"),
+    path("images", UserImagesListView.as_view(), name="list_images"),
     path("generate-link/", GenerateExpiringLinkView.as_view(), name="generate-link"),
     path(
         "expiring/<uuid:link_uuid>/", serve_expiring_image, name="serve_expiring_image"
